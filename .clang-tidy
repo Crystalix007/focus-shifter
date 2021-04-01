@@ -1,0 +1,14 @@
+---
+WarningsAsErrors: ''
+HeaderFilterRegex: 'src/.*'
+AnalyzeTemporaryDtors: false
+FormatStyle:     file
+Checks: '-*,readability-*,modernize-*,-modernize-use-trailing-return-type,performance-*,cpp-core-guidelines,bugprone-*,llvm-include-order,llvm-namespace-comment'
+CheckOptions:
+  - { key: readability-identifier-naming.ClassCase,          value: CamelCase  }
+  - { key: readability-identifier-naming.VariableCase,       value: camelBack }
+  - { key: readability-identifier-naming.FunctionCase,       value: lower_case }
+  - { key: readability-identifier-naming.MethodCase,         value: lower_case }
+  - { key: readability-identifier-naming.VirtualMethodCase,  value: lower_case }
+  - { key: readability-identifier-naming.ParameterCase,      value: camelBack }
+  - { key: readability-identifier-naming.GlobalConstantCase, value: UPPER_CASE }

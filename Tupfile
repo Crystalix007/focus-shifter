@@ -1,0 +1,17 @@
+CXX      = clang++
+LIBS     =
+CXXFLAGS = -pedantic -std=c++17 -Wall -Werror -g -O2 -fno-omit-frame-pointer
+CPPFLAGS = `pkg-config --cflags $(LIBS)`
+LDFLAGS  = `pkg-config --libs $(LIBS)`
+
+SRC_DIR   = src
+GEN_DIR   = generated
+BUILD_DIR = build
+PROG      = program
+
+CXXFLAGS += -I $(GEN_DIR)
+
+: foreach $(SRC_DIR)/*.cpp |> $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c %f -o %o |> $(BUILD_DIR)/%B.o
+: $(BUILD_DIR)/*.o |> $(CXX) %f $(LDFLAGS) -o %o |> $(PROG)
+
+.gitignore
