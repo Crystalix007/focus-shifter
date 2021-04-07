@@ -16,9 +16,3 @@ repos:
         files: ^src/
       - id: clang-tidy
         files: ^src/
-      - id: oclint
-        args: [-enable-clang-static-analyzer, -enable-global-analysis]
-        files: ^src/
-      - id: cppcheck
-        args: [--enable=all]
-        files: ^src/

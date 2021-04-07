@@ -1,8 +1,7 @@
-CXX      = clang++
-LIBS     =
-CXXFLAGS = -pedantic -std=c++17 -Wall -Werror -g -O2 -fno-omit-frame-pointer
-CPPFLAGS = `pkg-config --cflags $(LIBS)`
-LDFLAGS  = `pkg-config --libs $(LIBS)`
+CXX      = g++
+CXXFLAGS = -pedantic -std=c++17 -g -O0 -fno-omit-frame-pointer -fsigned-char
+CPPFLAGS = -I ../CrSDK/app/
+LDFLAGS  = -l Cr_Core -lpthread
 
 SRC_DIR   = src
 GEN_DIR   = generated
